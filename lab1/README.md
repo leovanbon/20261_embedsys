@@ -1,7 +1,10 @@
 # Lab 1 — STM32F429 Discovery
 
-Một project cho toàn bộ bài 1–4. Mở thư mục `Lab1_20261` trong VS Code.
+Một project cho toàn bộ bài 1–4. Mở thư mục `lab1` trong VS Code.
 Chọn bài bằng preset; mã ứng dụng và thư viện dùng chung.
+
+Xem [hướng dẫn chạy từ repository](../README.md) để chuẩn bị công cụ,
+build, nạp kit và mở PuTTY trên Linux.
 
 | Bài | Preset | Chức năng |
 | --- | --- | --- |

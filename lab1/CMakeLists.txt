@@ -1,0 +1,38 @@
+cmake_minimum_required(VERSION 3.20)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_C_COMPILER_FORCED TRUE)
+include(cmake/target.cmake)
+include(cmake/gcc-arm-none-eabi.cmake)
+project(Lab1_20261 LANGUAGES C ASM)
+
+set(LAB_EXERCISE "2" CACHE STRING "1: LED; 2: seven-segment; 3: IR; 4: remote control")
+if(NOT LAB_EXERCISE MATCHES "^[1-4]$")
+  message(FATAL_ERROR "LAB_EXERCISE must be 1, 2, 3 or 4")
+endif()
+
+add_executable(${PROJECT_NAME})
+include(cmake/flags.cmake)
+include(cmake/components.cmake)
+include(cmake/files.cmake)
+
+# The system Arm GCC does not implement ST's complexity-reporting option.
+get_target_property(project_options ${PROJECT_NAME} COMPILE_OPTIONS)
+string(REPLACE "-fcyclomatic-complexity" "" project_options "${project_options}")
+set_property(TARGET ${PROJECT_NAME} PROPERTY COMPILE_OPTIONS "${project_options}")
+
+target_sources(${PROJECT_NAME} PRIVATE App/lab_app.c Libraries/leds/led_effects.c)
+target_include_directories(${PROJECT_NAME} PRIVATE App Libraries/leds)
+target_compile_definitions(${PROJECT_NAME} PRIVATE LAB_EXERCISE=${LAB_EXERCISE})
+
+if(LAB_EXERCISE STREQUAL "2" OR LAB_EXERCISE STREQUAL "4")
+  target_sources(${PROJECT_NAME} PRIVATE Libraries/seven_segment/7seg.c)
+  target_include_directories(${PROJECT_NAME} PRIVATE Libraries/seven_segment)
+endif()
+if(LAB_EXERCISE STREQUAL "2")
+  target_sources(${PROJECT_NAME} PRIVATE Libraries/button/button.c)
+  target_include_directories(${PROJECT_NAME} PRIVATE Libraries/button)
+endif()
+if(LAB_EXERCISE GREATER_EQUAL 3)
+  target_sources(${PROJECT_NAME} PRIVATE Libraries/infrared/irda.c)
+  target_include_directories(${PROJECT_NAME} PRIVATE Libraries/infrared)
+endif()

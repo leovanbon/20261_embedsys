@@ -1,0 +1,70 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "default",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}"
+    },
+    {
+      "name": "Debug",
+      "inherits": "default",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "LAB_EXERCISE": "2"
+      }
+    },
+    {
+      "name": "Release",
+      "inherits": "default",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "LAB_EXERCISE": "2"
+      }
+    },
+    {
+      "name": "LED",
+      "inherits": "Debug",
+      "cacheVariables": {
+        "LAB_EXERCISE": "1"
+      }
+    },
+    {
+      "name": "IR",
+      "inherits": "Debug",
+      "cacheVariables": {
+        "LAB_EXERCISE": "3"
+      }
+    },
+    {
+      "name": "Remote",
+      "inherits": "Debug",
+      "cacheVariables": {
+        "LAB_EXERCISE": "4"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Debug",
+      "configurePreset": "Debug"
+    },
+    {
+      "name": "Release",
+      "configurePreset": "Release"
+    },
+    {
+      "name": "LED",
+      "configurePreset": "LED"
+    },
+    {
+      "name": "IR",
+      "configurePreset": "IR"
+    },
+    {
+      "name": "Remote",
+      "configurePreset": "Remote"
+    }
+  ]
+}

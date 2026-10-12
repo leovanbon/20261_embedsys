@@ -1,5 +1,34 @@
-build/
+# CMake build directories and machine-specific configuration
+/build/
+/out/
+cmake-build*/
+CMakeUserPresets.json
+CMakeCache.txt
+CMakeFiles/
+.cmake/
+compile_commands.json
+build.ninja
+.ninja_deps
+.ninja_log
+
+# Generated firmware and compiler output
+*.o
+*.obj
+*.elf
+*.hex
+*.bin
+*.map
+*.su
+*.cyclo
+
+# Python, debugger and editor caches
 .cache/
 __pycache__/
-*.pyc
-*gdb*log*
+*.py[cod]
+*.log
+.history/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

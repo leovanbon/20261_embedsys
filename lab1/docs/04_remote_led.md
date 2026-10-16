@@ -4,14 +4,14 @@ Preset `Remote` dùng HS0038 trên PG5 và mạch LED của bài 1, 2.
 
 | Nút | Byte mã lệnh | Hiện thập phân trên LED 7 thanh | Chức năng |
 | --- | --- | --- | --- |
-| 1 | 0C | 12 | Running spot L |
-| 2 | 18 | 24 | Running spot R |
-| 3 | 5E | 94 | Flash |
-| 4 | 08 | 08 | Hai LED đối xứng |
-| Play/Pause | 44 | 68 | Bật/tắt LED4 PG14, thay OK |
+| 1 | 45 | 69 | Running spot L |
+| 2 | 46 | 70 | Running spot R |
+| 3 | 47 | 71 | Flash |
+| 4 | 44 | 68 | Hai LED đối xứng |
+| OK | 1C | 28 | Bật/tắt LED4 PG14 |
 
-Remote không có nút OK nên dùng Play/Pause thay thế. Mã 44 được xác nhận
-bằng lần bấm Play/Pause rồi 1, 2, 3, 4 trên PuTTY. Khi đổi remote,
+Mã nút được xác nhận theo thứ tự bấm 1, 2, 3, 4, OK trên PuTTY.
+Khi đổi remote,
 đổi giá trị khởi tạo `Remote_ToggleKey` trong `App/lab_app.c` nếu cần.
 Mỗi nút khác vẫn cập nhật LED 7 thanh bằng byte thứ ba, giữ nguyên hiệu ứng.
 Các mã đã đo trên remote này đều nằm trong 00–99; thư viện hiện tại lấy

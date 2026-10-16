@@ -18,10 +18,10 @@
 #define LAB_DOUBLE_CLICK_TICKS 3000U
 
 /* Actual command bytes measured on the lab remote. */
-#define REMOTE_KEY_PLAY_PAUSE 0x44U
-#define REMOTE_KEY_1          0x0CU
-#define REMOTE_KEY_2          0x18U
-#define REMOTE_KEY_3          0x5EU
-#define REMOTE_KEY_4          0x08U
+#define REMOTE_KEY_OK         0x1CU
+#define REMOTE_KEY_1          0x45U
+#define REMOTE_KEY_2          0x46U
+#define REMOTE_KEY_3          0x47U
+#define REMOTE_KEY_4          0x44U
 
 #endif

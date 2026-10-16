@@ -31,7 +31,7 @@ int main(void)
 {
   LabApp_Init();
   assert(Get7SegDisplayValue() == 0 && LED_Mode == 0);
-  const unsigned keys[] = {0x0C, 0x18, 0x5E, 0x08};
+  const unsigned keys[] = {0x45, 0x46, 0x47, 0x44};
   for (unsigned i = 0; i < 4; i++)
   {
     press(keys[i]);

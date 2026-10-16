@@ -11,7 +11,7 @@ build, nạp kit và mở PuTTY trên Linux.
 | 1 / mục 3.1 | LED | 4 hiệu ứng LED, 200 ms/bước, mỗi hiệu ứng 2 chu kỳ |
 | 2 / mục 3.2 | Debug | LED 7 thanh hiện 25; B1 tăng số; LED đơn chạy nhanh |
 | 3 / mục 3.3 | IR | Nhận NEC trên PG5, xem mã trên PuTTY qua ST-LINK |
-| 4 / mục 4 | Remote | Hiện byte mã nút, nút 1–4 chọn hiệu ứng, Play/Pause đảo LED4 |
+| 4 / mục 4 | Remote | Hiện byte mã nút, nút 1–4 chọn hiệu ứng, OK đảo LED4 |
 | 2 tối ưu | Release | Chức năng bài 2, tối ưu kích thước |
 
 Build từ thư mục này, thay `Remote` bằng preset cần dùng:
@@ -46,6 +46,22 @@ tools/ir_monitor.py          Nhận mã và chuyển sang PuTTY
 tools/stlink.py              Kết nối debugger dùng chung
 Tests/                       Kiểm tra logic trên máy tính
 ```
+
+## Đọc code theo từng bài
+
+Mở [`App/lab_app.c`](App/lab_app.c). File chia thành các khối rõ ràng:
+
+| Khối | Hàm chính | Preset |
+| --- | --- | --- |
+| Bài 1: LED đơn | `Bai1_Init()`, `Bai1_Process()` | `LED` |
+| Bài 2: LED 7 thanh + B1 | `Bai2_Init()`, `Bai2_Process()` | `Debug` / `Release` |
+| Bài 3: nhận mã IR | `Bai3_Init()`, `Bai3_Process()` | `IR` |
+| Bài 4: remote điều khiển LED | `Bai4_Init()`, `Bai4_HandleKey()`, `Bai4_Process()` | `Remote` |
+
+Cuối file là hai hàm chọn bài `LabApp_Init()`/`LabApp_Process()` và các
+callback ngắt dùng chung. `Core/Src/main.c` chỉ khởi tạo phần cứng và gọi
+hai hàm điều phối này. Các hàm truy cập phần cứng vẫn nằm trong
+`Libraries/` để bài 2 và bài 4 dùng chung mã LED, bài 3 và bài 4 dùng chung IR.
 
 Đọc [tổng hợp toàn bài và nối mạch](docs/00_tong_hop.md).
 Chi tiết: [LED đơn](docs/01_led_don.md), [LED 7 thanh](docs/02_led_7_thanh.md),

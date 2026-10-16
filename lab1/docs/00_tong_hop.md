@@ -32,6 +32,22 @@ chân a,b,c,d,e,f,g,dp là 7,6,4,2,1,9,10,5; cả chân chung 3 và 8
 nối collector. Loại khác phải đối chiếu pinout. Transistor cần xác định
 đúng B/C/E. Sắp dãy LED đơn PD15 bên trái, PD8 bên phải.
 
+## Vị trí code từng bài
+
+Toàn bộ phần điều phối bài tập được gom trong `App/lab_app.c`, theo thứ tự:
+
+1. Phần dùng chung hỗ trợ LED theo âm thanh.
+2. Bài 1: `Bai1_Init()` và `Bai1_Process()`.
+3. Bài 2: `Bai2_Init()` và `Bai2_Process()`.
+4. Bài 3: `Bai3_Init()` và `Bai3_Process()`.
+5. Bài 4: `Bai4_Init()`, `Bai4_HandleKey()` và `Bai4_Process()`.
+6. Chọn bài theo preset: `LabApp_Init()` và `LabApp_Process()`.
+7. Callback ngắt timer và EXTI dùng chung.
+
+Mỗi khối có chú thích bài, preset và thư viện liên quan. Chỉ khối ứng với
+preset đã chọn được biên dịch. Để sửa hành vi bài nào, bắt đầu từ khối
+đó; để sửa bảng hiệu ứng, quét LED hoặc giải mã, mở thư viện tương ứng.
+
 ## Luồng chương trình
 
 `main.c` khởi tạo HAL, clock 180 MHz, GPIO, TIM6; gọi `LabApp_Init()`;
@@ -85,11 +101,11 @@ trong Watch. `IR_Init()` và `IR_Tick()` quản lý trạng thái và thời gia
 
 | Nút đã đo | Byte thứ ba | LED 7 thanh (thập phân) | Hành động |
 | --- | --- | --- | --- |
-| Play/Pause | 44 | 68 | Đảo LED4, thay nút OK không có trên remote |
-| 1 | 0C | 12 | Chấm chạy phải sang trái |
-| 2 | 18 | 24 | Chấm chạy trái sang phải |
-| 3 | 5E | 94 | Nháy cả tám LED |
-| 4 | 08 | 08 | Hai LED đối xứng vào/ra |
+| OK | 1C | 28 | Đảo LED4 |
+| 1 | 45 | 69 | Chấm chạy phải sang trái |
+| 2 | 46 | 70 | Chấm chạy trái sang phải |
+| 3 | 47 | 71 | Nháy cả tám LED |
+| 4 | 44 | 68 | Hai LED đối xứng vào/ra |
 
 Các nút khác chỉ cập nhật giá trị hiển thị. Hiệu ứng đã chọn tiếp tục
 đến khi chọn nút khác. B1 không đảo LED4 ở bài 4. LED 7 thanh hiện byte
@@ -121,5 +137,5 @@ bash Tests/run.sh
 
 Kiểm tra chống dội, giữ B1, vòng 99→00, quét LED, timeout âm thanh,
 giải mã NEC LSB-first, byte đảo sai, repeat, khôi phục khung lỗi,
-ánh xạ 1–4, giữ hiệu ứng và Play/Pause đảo LED4. HAL giả chỉ kiểm tra
+ánh xạ 1–4, giữ hiệu ứng và OK đảo LED4. HAL giả chỉ kiểm tra
 logic; cần quan sát LED thực tế để kiểm tra dây nối.

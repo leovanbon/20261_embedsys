@@ -91,10 +91,10 @@ cmake --build --preset IR
 python3 tools/ir_monitor.py --exercise IR --putty
 ```
 
-Ví dụ đầu ra khi bấm Play/Pause trên remote đã đo:
+Ví dụ đầu ra khi bấm OK trên remote đã đo:
 
 ```text
-#1  NEC: 00 FF 44 BB  | key = 0x44 (68)
+#1  NEC: 00 FF 1C E3  | key = 0x1C (28)
 ```
 
 Bốn byte lần lượt là địa chỉ, byte địa chỉ thứ hai, mã nút và byte đảo mã
@@ -124,11 +124,11 @@ python3 tools/ir_monitor.py --exercise Remote --putty
 
 | Nút | Mã đã đo | LED 7 thanh | Hành động |
 | --- | --- | --- | --- |
-| Play/Pause | `0x44` | `68` | Bật/tắt LED4, thay nút OK không có trên remote |
-| 1 | `0x0C` | `12` | Chấm chạy từ phải sang trái |
-| 2 | `0x18` | `24` | Chấm chạy từ trái sang phải |
-| 3 | `0x5E` | `94` | Nháy cả tám LED |
-| 4 | `0x08` | `08` | Hai LED đối xứng chạy vào/ra |
+| OK | `0x1C` | `28` | Bật/tắt LED4 |
+| 1 | `0x45` | `69` | Chấm chạy từ phải sang trái |
+| 2 | `0x46` | `70` | Chấm chạy từ trái sang phải |
+| 3 | `0x47` | `71` | Nháy cả tám LED |
+| 4 | `0x44` | `68` | Hai LED đối xứng chạy vào/ra |
 
 LED 7 thanh hiện **byte mã nút ở dạng thập phân**, không phải số in trên
 remote. Thư viện hiện hai chữ số cuối nếu mã lớn hơn 99. Hiệu ứng giữ

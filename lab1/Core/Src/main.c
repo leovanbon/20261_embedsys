@@ -88,7 +88,7 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
-  LabApp_Init();
+  LabApp_Init();                                  //HERE
   HAL_TIM_Base_Start_IT(&htim6);
   /* USER CODE END 2 */
 

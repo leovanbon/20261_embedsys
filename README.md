@@ -1,6 +1,11 @@
 # Hệ nhúng — 20261
 
 Repository thực hành hệ nhúng trên kit **STM32F429 Discovery**.
+Project **[Lab 2 — ghép nối nối tiếp](lab2/README.md)** gồm DS1307, OLED
+SH1106, RFID RC522, quản lý thẻ và 100 log qua UART. Xem
+[sơ đồ mạch Lab 2](lab2/docs/so_do_lab2.pdf) và các preset `RTC`, `OLED`,
+`RFID`, `Access` trong `lab2/`.
+
 Project Lab 1 nằm trong [`lab1/`](lab1/), gồm GPIO, LED đơn, LED 7 thanh,
 nút B1 và giải mã remote hồng ngoại NEC.
 

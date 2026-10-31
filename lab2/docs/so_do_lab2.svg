@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1400" viewBox="0 0 1800 1400" role="img">
+<title>Lab 2 — Sơ đồ ghép nối STM32F429, Tiny RTC, OLED, RC522 và UART</title>
+<style>text {font-family:"DejaVu Sans",sans-serif} .wire {fill:none;stroke-linecap:round;stroke-linejoin:round}</style>
+<rect width="1800" height="1400" fill="#f4f7fb"/>
+<text x="60" y="65" font-size="36" fill="#182b43" font-weight="700" text-anchor="start">LAB 2  /  GHÉP NỐI NỐI TIẾP</text>
+<text x="60" y="103" font-size="21" fill="#51647a" font-weight="400" text-anchor="start">Sơ đồ ghép nối theo mục 3.4–3.9 của đề • STM32F429 Discovery • Firmware lab2</text>
+<rect x="650" y="220" width="440" height="820" rx="12" fill="white" stroke="#cbd6e2" stroke-width="2"/>
+<text x="674" y="256" font-size="25" fill="#182b43" font-weight="700" text-anchor="start">STM32F429I DISCOVERY</text>
+<text x="674" y="284" font-size="17" fill="#51647a" font-weight="400" text-anchor="start">SYSCLK 180 MHz • GND chung</text>
+<polyline class="wire" points="668,300 1072,300" stroke="#dbe3ec" stroke-width="1"/>
+<text x="682" y="345" font-size="22" fill="#007e87" font-weight="700" text-anchor="start">I2C3  ·  100 kHz</text>
+<circle cx="650" cy="390" r="5" fill="#007e87"/>
+<text x="668" y="397" font-size="20" fill="#007e87" font-weight="500" text-anchor="start">PA8   / SCL</text>
+<circle cx="650" cy="430" r="5" fill="#2462cb"/>
+<text x="668" y="437" font-size="20" fill="#2462cb" font-weight="500" text-anchor="start">PC9   / SDA</text>
+<text x="900" y="345" font-size="20" fill="#7755b6" font-weight="700" text-anchor="start">SPI4 · mode 0</text>
+<circle cx="1090" cy="390" r="5" fill="#7755b6"/>
+<text x="1072" y="397" font-size="20" fill="#7755b6" font-weight="500" text-anchor="end">PE4 / SS</text>
+<circle cx="1090" cy="430" r="5" fill="#7755b6"/>
+<text x="1072" y="437" font-size="20" fill="#7755b6" font-weight="500" text-anchor="end">PE2 / SCK</text>
+<circle cx="1090" cy="470" r="5" fill="#7755b6"/>
+<text x="1072" y="477" font-size="20" fill="#7755b6" font-weight="500" text-anchor="end">PE5 / MISO</text>
+<circle cx="1090" cy="510" r="5" fill="#7755b6"/>
+<text x="1072" y="517" font-size="20" fill="#7755b6" font-weight="500" text-anchor="end">PE6 / MOSI</text>
+<text x="682" y="570" font-size="22" fill="#182b43" font-weight="700" text-anchor="start">LED tích hợp trên kit</text>
+<rect x="682" y="590" width="372" height="68" rx="8" fill="#f4f7fb" stroke="#e0e7ef" stroke-width="2"/>
+<circle cx="708" cy="615" r="10" fill="#249755"/>
+<text x="730" y="621" font-size="22" fill="#182b43" font-weight="700" text-anchor="start">LED3 · PG13</text>
+<text x="730" y="645" font-size="17" fill="#51647a" font-weight="400" text-anchor="start">Sáng khi phát hiện thẻ</text>
+<rect x="682" y="675" width="372" height="68" rx="8" fill="#f4f7fb" stroke="#e0e7ef" stroke-width="2"/>
+<circle cx="708" cy="700" r="10" fill="#df4b47"/>
+<text x="730" y="706" font-size="22" fill="#182b43" font-weight="700" text-anchor="start">LED4 · PG14</text>
+<text x="730" y="730" font-size="17" fill="#51647a" font-weight="400" text-anchor="start">Sáng khi thẻ được phép</text>
+<text x="682" y="803" font-size="22" fill="#b85916" font-weight="700" text-anchor="start">USART1  ·  115200 / 8N1</text>
+<circle cx="1090" cy="890" r="5" fill="#b85916"/>
+<text x="1072" y="897" font-size="20" fill="#b85916" font-weight="500" text-anchor="end">PA9 / TX</text>
+<circle cx="1090" cy="940" r="5" fill="#b85916"/>
+<text x="1072" y="947" font-size="20" fill="#b85916" font-weight="500" text-anchor="end">PA10 / RX</text>
+<text x="682" y="990" font-size="18" fill="#51647a" font-weight="400" text-anchor="start">Nạp chương trình qua cổng ST-LINK.</text>
+<polyline class="wire" points="760,220 760,178" stroke="#c83542" stroke-width="3"/>
+<polyline class="wire" points="751,188 760,178 769,188" stroke="#c83542" stroke-width="3"/>
+<text x="760" y="166" font-size="19" fill="#c83542" font-weight="700" text-anchor="middle">3V (≈3.3V)</text>
+<polyline class="wire" points="980,220 980,178" stroke="#c83542" stroke-width="3"/>
+<polyline class="wire" points="971,188 980,178 989,188" stroke="#c83542" stroke-width="3"/>
+<text x="980" y="166" font-size="19" fill="#c83542" font-weight="700" text-anchor="middle">5V</text>
+<polyline class="wire" points="870,1040 870,1064" stroke="#354357" stroke-width="3"/>
+<polyline class="wire" points="857.0,1064 883.0,1064" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="862.0,1071 878.0,1071" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="867.0,1078 873.0,1078" stroke="#354357" stroke-width="2"/>
+<text x="870" y="1102" font-size="17" fill="#354357" font-weight="500" text-anchor="middle">GND</text>
+<rect x="65" y="210" width="335" height="260" rx="12" fill="white" stroke="#cbd6e2" stroke-width="2"/>
+<text x="89" y="246" font-size="25" fill="#182b43" font-weight="700" text-anchor="start">TINY RTC</text>
+<text x="89" y="274" font-size="17" fill="#51647a" font-weight="400" text-anchor="start">DS1307 + AT24C32</text>
+<polyline class="wire" points="83,290 382,290" stroke="#dbe3ec" stroke-width="1"/>
+<circle cx="400" cy="310" r="5" fill="#007e87"/>
+<text x="382" y="317" font-size="20" fill="#007e87" font-weight="500" text-anchor="end">SCL</text>
+<circle cx="400" cy="350" r="5" fill="#2462cb"/>
+<text x="382" y="357" font-size="20" fill="#2462cb" font-weight="500" text-anchor="end">SDA</text>
+<text x="89" y="400" font-size="18" fill="#51647a" font-weight="400" text-anchor="start">I2C: 0x68 / 0x50 (7 bit)</text>
+<text x="89" y="428" font-size="18" fill="#51647a" font-weight="400" text-anchor="start">Pin dự phòng → VBAT (*)</text>
+<polyline class="wire" points="200,210 200,168" stroke="#c83542" stroke-width="3"/>
+<polyline class="wire" points="191,178 200,168 209,178" stroke="#c83542" stroke-width="3"/>
+<text x="200" y="156" font-size="19" fill="#c83542" font-weight="700" text-anchor="middle">VCC = 5V</text>
+<polyline class="wire" points="100,470 100,494" stroke="#354357" stroke-width="3"/>
+<polyline class="wire" points="87.0,494 113.0,494" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="92.0,501 108.0,501" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="97.0,508 103.0,508" stroke="#354357" stroke-width="2"/>
+<text x="100" y="532" font-size="17" fill="#354357" font-weight="500" text-anchor="middle">GND</text>
+<text x="259" y="493" font-size="16" fill="#51647a" font-weight="400" text-anchor="start">SQ, DS: không nối</text>
+<rect x="65" y="580" width="335" height="220" rx="12" fill="white" stroke="#cbd6e2" stroke-width="2"/>
+<text x="89" y="616" font-size="25" fill="#182b43" font-weight="700" text-anchor="start">OLED SH1106</text>
+<text x="89" y="644" font-size="17" fill="#51647a" font-weight="400" text-anchor="start">128 × 64 • 1.3 inch</text>
+<polyline class="wire" points="83,660 382,660" stroke="#dbe3ec" stroke-width="1"/>
+<circle cx="400" cy="680" r="5" fill="#007e87"/>
+<text x="382" y="687" font-size="20" fill="#007e87" font-weight="500" text-anchor="end">SCL</text>
+<circle cx="400" cy="730" r="5" fill="#2462cb"/>
+<text x="382" y="737" font-size="20" fill="#2462cb" font-weight="500" text-anchor="end">SDA</text>
+<text x="89" y="774" font-size="18" fill="#51647a" font-weight="400" text-anchor="start">I2C: 0x3C theo code mẫu</text>
+<polyline class="wire" points="200,580 200,538" stroke="#c83542" stroke-width="3"/>
+<polyline class="wire" points="191,548 200,538 209,548" stroke="#c83542" stroke-width="3"/>
+<text x="200" y="526" font-size="19" fill="#c83542" font-weight="700" text-anchor="middle">VCC = 3V</text>
+<polyline class="wire" points="140,800 140,824" stroke="#354357" stroke-width="3"/>
+<polyline class="wire" points="127.0,824 153.0,824" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="132.0,831 148.0,831" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="137.0,838 143.0,838" stroke="#354357" stroke-width="2"/>
+<text x="140" y="862" font-size="17" fill="#354357" font-weight="500" text-anchor="middle">GND</text>
+<polyline class="wire" points="400,310 490,310 490,680 400,680" stroke="#007e87" stroke-width="3"/>
+<polyline class="wire" points="490,390 650,390" stroke="#007e87" stroke-width="3"/>
+<circle cx="490" cy="390" r="5" fill="#007e87"/>
+<polyline class="wire" points="400,350 550,350 550,730 400,730" stroke="#2462cb" stroke-width="3"/>
+<polyline class="wire" points="550,430 650,430" stroke="#2462cb" stroke-width="3"/>
+<circle cx="550" cy="430" r="5" fill="#2462cb"/>
+<text x="470" y="760" font-size="17" fill="#007e87" font-weight="700" text-anchor="start">SCL</text>
+<text x="537" y="790" font-size="17" fill="#2462cb" font-weight="700" text-anchor="start">SDA</text>
+<rect x="1360" y="280" width="360" height="460" rx="12" fill="white" stroke="#cbd6e2" stroke-width="2"/>
+<text x="1384" y="316" font-size="25" fill="#182b43" font-weight="700" text-anchor="start">RFID RC522</text>
+<text x="1384" y="344" font-size="17" fill="#51647a" font-weight="400" text-anchor="start">SPI • thẻ 13.56 MHz</text>
+<polyline class="wire" points="1378,360 1702,360" stroke="#dbe3ec" stroke-width="1"/>
+<circle cx="1360" cy="390" r="5" fill="#7755b6"/>
+<text x="1378" y="397" font-size="20" fill="#7755b6" font-weight="500" text-anchor="start">SDA / SS</text>
+<polyline class="wire" points="1090,390 1360,390" stroke="#7755b6" stroke-width="3"/>
+<circle cx="1360" cy="430" r="5" fill="#7755b6"/>
+<text x="1378" y="437" font-size="20" fill="#7755b6" font-weight="500" text-anchor="start">SCK</text>
+<polyline class="wire" points="1090,430 1360,430" stroke="#7755b6" stroke-width="3"/>
+<circle cx="1360" cy="470" r="5" fill="#7755b6"/>
+<text x="1378" y="477" font-size="20" fill="#7755b6" font-weight="500" text-anchor="start">MISO</text>
+<polyline class="wire" points="1090,470 1360,470" stroke="#7755b6" stroke-width="3"/>
+<circle cx="1360" cy="510" r="5" fill="#7755b6"/>
+<text x="1378" y="517" font-size="20" fill="#7755b6" font-weight="500" text-anchor="start">MOSI</text>
+<polyline class="wire" points="1090,510 1360,510" stroke="#7755b6" stroke-width="3"/>
+<text x="1118" y="375" font-size="17" fill="#7755b6" font-weight="400" text-anchor="start">CS mức thấp</text>
+<text x="1384" y="560" font-size="19" fill="#182b43" font-weight="700" text-anchor="start">Chân “SDA” ở đây là SS.</text>
+<text x="1384" y="590" font-size="17" fill="#51647a" font-weight="400" text-anchor="start">Không nối chân này vào I2C.</text>
+<circle cx="1720" cy="630" r="5" fill="#c83542"/>
+<text x="1702" y="637" font-size="20" fill="#c83542" font-weight="500" text-anchor="end">RST</text>
+<polyline class="wire" points="1720,630 1750,630 1750,565" stroke="#c83542" stroke-width="3"/>
+<text x="1750" y="550" font-size="18" fill="#c83542" font-weight="700" text-anchor="middle">3V</text>
+<text x="1384" y="685" font-size="19" fill="#51647a" font-weight="400" text-anchor="start">IRQ: không nối</text>
+<polyline class="wire" points="1510,280 1510,238" stroke="#c83542" stroke-width="3"/>
+<polyline class="wire" points="1501,248 1510,238 1519,248" stroke="#c83542" stroke-width="3"/>
+<text x="1510" y="226" font-size="19" fill="#c83542" font-weight="700" text-anchor="middle">VCC = 3V</text>
+<polyline class="wire" points="1535,740 1535,764" stroke="#354357" stroke-width="3"/>
+<polyline class="wire" points="1522.0,764 1548.0,764" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="1527.0,771 1543.0,771" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="1532.0,778 1538.0,778" stroke="#354357" stroke-width="2"/>
+<text x="1535" y="802" font-size="17" fill="#354357" font-weight="500" text-anchor="middle">GND</text>
+<rect x="1360" y="780" width="360" height="260" rx="12" fill="white" stroke="#cbd6e2" stroke-width="2"/>
+<text x="1384" y="816" font-size="25" fill="#182b43" font-weight="700" text-anchor="start">USB–UART → PC</text>
+<text x="1384" y="844" font-size="17" fill="#51647a" font-weight="400" text-anchor="start">Hercules / PuTTY Serial</text>
+<polyline class="wire" points="1378,860 1702,860" stroke="#dbe3ec" stroke-width="1"/>
+<circle cx="1360" cy="890" r="5" fill="#b85916"/>
+<text x="1378" y="897" font-size="20" fill="#b85916" font-weight="500" text-anchor="start">RXD ← STM32 TX</text>
+<circle cx="1360" cy="940" r="5" fill="#b85916"/>
+<text x="1378" y="947" font-size="20" fill="#b85916" font-weight="500" text-anchor="start">TXD → STM32 RX</text>
+<polyline class="wire" points="1090,890 1360,890" stroke="#b85916" stroke-width="3"/>
+<polyline class="wire" points="1090,940 1360,940" stroke="#b85916" stroke-width="3"/>
+<text x="1384" y="985" font-size="20" fill="#b85916" font-weight="700" text-anchor="start">Mức logic 3.3V</text>
+<text x="1384" y="1015" font-size="18" fill="#51647a" font-weight="400" text-anchor="start">VCC adapter: không nối</text>
+<polyline class="wire" points="1535,1040 1535,1064" stroke="#354357" stroke-width="3"/>
+<polyline class="wire" points="1522.0,1064 1548.0,1064" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="1527.0,1071 1543.0,1071" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="1532.0,1078 1538.0,1078" stroke="#354357" stroke-width="2"/>
+<text x="1535" y="1102" font-size="17" fill="#354357" font-weight="500" text-anchor="middle">GND</text>
+<text x="65" y="940" font-size="22" fill="#182b43" font-weight="700" text-anchor="start">TỤ LỌC NGUỒN</text>
+<polyline class="wire" points="360,975 360,933" stroke="#c83542" stroke-width="3"/>
+<polyline class="wire" points="351,943 360,933 369,943" stroke="#c83542" stroke-width="3"/>
+<text x="360" y="921" font-size="19" fill="#c83542" font-weight="700" text-anchor="middle">3V</text>
+<polyline class="wire" points="360,975 360,991" stroke="#c83542" stroke-width="3"/>
+<polyline class="wire" points="337,991 383,991" stroke="#182b43" stroke-width="3"/>
+<polyline class="wire" points="337,1005 383,1005" stroke="#182b43" stroke-width="3"/>
+<polyline class="wire" points="360,1005 360,1028" stroke="#354357" stroke-width="3"/>
+<polyline class="wire" points="360,1028 360,1052" stroke="#354357" stroke-width="3"/>
+<polyline class="wire" points="347.0,1052 373.0,1052" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="352.0,1059 368.0,1059" stroke="#354357" stroke-width="2"/>
+<polyline class="wire" points="357.0,1066 363.0,1066" stroke="#354357" stroke-width="2"/>
+<text x="360" y="1090" font-size="17" fill="#354357" font-weight="500" text-anchor="middle">GND</text>
+<text x="320" y="985" font-size="24" fill="#c83542" font-weight="700" text-anchor="start">+</text>
+<text x="65" y="1007" font-size="23" fill="#182b43" font-weight="700" text-anchor="start">C1 = 100 µF</text>
+<text x="65" y="1043" font-size="18" fill="#c83542" font-weight="400" text-anchor="start">Cực + → 3V</text>
+<text x="65" y="1073" font-size="18" fill="#354357" font-weight="400" text-anchor="start">Cực − → GND</text>
+<rect x="60" y="1150" width="1680" height="190" rx="12" fill="#fff7e9" stroke="#e3c58e" stroke-width="2"/>
+<text x="85" y="1187" font-size="23" fill="#80500d" font-weight="700" text-anchor="start">LƯU Ý MỨC ĐIỆN ÁP I2C</text>
+<text x="85" y="1222" font-size="21" fill="#182b43" font-weight="400" text-anchor="start">Tiny RTC trong đề có R2/R3 kéo SDA/SCL lên 5V, nhưng OLED được cấp 3V.</text>
+<text x="85" y="1257" font-size="21" fill="#182b43" font-weight="400" text-anchor="start">Với module này, bổ sung chuyển mức I2C hai chiều: LV = 3.3V (STM32 + OLED), HV = 5V (Tiny RTC).</text>
+<text x="85" y="1292" font-size="19" fill="#51647a" font-weight="400" text-anchor="start">(*) Giữ pin dự phòng đúng loại của module; không đấu thêm nguồn 3V song song với pin đang lắp.</text>
+<text x="85" y="1321" font-size="18" fill="#51647a" font-weight="400" text-anchor="start">Xem sơ đồ i2c_level_shift.svg. Tất cả GND nối chung; chấm tròn là điểm nối, giao cắt không chấm không nối.</text>
+<text x="60" y="1372" font-size="18" fill="#51647a" font-weight="400" text-anchor="start">Các chân ghi theo tên trên module, không theo vị trí hàng chân. Kiểm tra nhãn SCL/SDA trên OLED trước khi cắm.</text>
+</svg>

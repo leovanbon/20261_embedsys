@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {"name": "base", "hidden": true, "generator": "Ninja", "binaryDir": "${sourceDir}/build/${presetName}", "cacheVariables": {"CMAKE_BUILD_TYPE": "Debug"}},
+    {"name": "RTC", "inherits": "base", "cacheVariables": {"LAB_STAGE": "6"}},
+    {"name": "OLED", "inherits": "base", "cacheVariables": {"LAB_STAGE": "7"}},
+    {"name": "RFID", "inherits": "base", "cacheVariables": {"LAB_STAGE": "8"}},
+    {"name": "Access", "inherits": "base", "cacheVariables": {"LAB_STAGE": "9"}}
+  ],
+  "buildPresets": [
+    {"name": "RTC", "configurePreset": "RTC"},
+    {"name": "OLED", "configurePreset": "OLED"},
+    {"name": "RFID", "configurePreset": "RFID"},
+    {"name": "Access", "configurePreset": "Access"}
+  ]
+}
